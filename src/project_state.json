@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Single-page romantic Valentine web app (pure HTML/CSS/JS) featuring an animated teddy bear intro screen with name entry and validation (only \"silpa\" accepted), leading to an aesthetic dreamy Valentine reveal page with smooth transitions, falling rose animation, Bengali love shayari text, and teddy animation on the reveal screen.",
+  "architectural_notes": [
+    "Pure HTML/CSS/JS single-page app; no external frameworks.",
+    "Two-screen flow: teddy/name entry screen -> Valentine reveal screen with smooth transition.",
+    "Name validation must be case-insensitive and only accept \"silpa\"."
+  ],
+  "known_issues": [
+    "Name validation/transition is not triggering when entering \"Silpa\" (expected to accept case-insensitive \"silpa\" and proceed to reveal screen).",
+    "Name input text is not visible while typing (input styling/contrast issue)."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-replace-the-current-multi-section-content-flow-with-a-single-page-two-state-experience-1-intro-screen-animated-teddy-name-input-2-reveal-screen-only-after-successful-validation-dreamy-valentine-page-the-transition-between-the-two-states-must-be-smooth-fade-slide-and-feel-romantic-and-playful",
+      "title": "Replace the current multi-section content flow with a single-page, two-state experience:\n1) Intro screen: animated teddy + name input.\n2) Reveal screen (only after successful validation): dreamy Valentine page.\nThe transition between the two states must be smooth (fade/slide) and feel romantic and playful.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-name-validation-on-the-intro-screen-accept-only-the-name-silpa-case-insensitive-ignoring-leading-trailing-whitespace-if-the-entered-name-is-not-accepted-the-teddy-must-visibly-react-e-g-a-quick-shake-squish-angry-cute-bounce-and-a-message-must-be-shown-in-bangla-exactly-as-tumi-thik-naam-dao-tumi-ki-jano-na-ekhane-kar-naam-hobe-thik-naam-dao",
+      "title": "Implement name validation on the intro screen:\n- Accept only the name \"silpa\" (case-insensitive, ignoring leading/trailing whitespace).\n- If the entered name is not accepted, the teddy must visibly react (e.g., a quick shake/squish/angry-cute bounce) and a message must be shown in Bangla exactly as:\n\"Tumi thik naam dao.\nTumi ki jano na ekhane kar naam hobe?\nThik naam dao...\"",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-and-build-the-intro-screen-ui-centered-cute-teddy-animation-bouncing-or-waving-above-the-input-a-clear-prompt-to-enter-a-name-mobile-first-responsive-layout-comfortable-spacing-large-tap-targets-and-readable-typography",
+      "title": "Design and build the intro screen UI:\n- Centered cute teddy animation (bouncing or waving) above the input.\n- A clear prompt to enter a name.\n- Mobile-first responsive layout (comfortable spacing, large tap targets, and readable typography).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-reveal-screen-content-and-styling-background-pastel-pink-romantic-gradient-dreamy-and-soft-display-the-exact-text-you-are-my-valentine-using-an-elegant-romantic-font-style-overall-mood-must-feel-dreamy-cute-and-emotional-soft-shadows-gentle-motion-no-harsh-contrast",
+      "title": "Implement the reveal screen content and styling:\n- Background: pastel pink / romantic gradient (dreamy and soft).\n- Display the exact text: \"You are my Valentine ❤️\" using an elegant romantic font style.\n- Overall mood must feel dreamy, cute, and emotional (soft shadows, gentle motion, no harsh contrast).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-continuous-falling-rose-petals-animation-on-the-reveal-screen-petals-originate-from-random-x-positions-at-the-top-and-fall-downward-at-varied-speeds-gentle-horizontal-drift-and-slight-rotation-are-applied-animation-runs-continuously-and-adapts-to-window-resize-must-not-block-interactions-pointer-events-disabled-for-petals-layer",
+      "title": "Add continuous falling rose petals (🌹) animation on the reveal screen:\n- Petals originate from random X positions at the top and fall downward at varied speeds.\n- Gentle horizontal drift and slight rotation are applied.\n- Animation runs continuously and adapts to window resize.\n- Must not block interactions (pointer-events disabled for petals layer).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-global-presentation-to-match-a-coherent-valentine-theme-across-both-states-ensure-a-consistent-romantic-color-palette-centered-on-pastel-pinks-roses-ensure-animations-and-transitions-are-soft-and-smooth-update-the-document-title-to-match-the-valentine-surprise-theme",
+      "title": "Update global presentation to match a coherent Valentine theme across both states:\n- Ensure a consistent romantic color palette centered on pastel pinks/roses.\n- Ensure animations and transitions are soft and smooth.\n- Update the document title to match the Valentine surprise theme.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-intro-gate-so-entering-the-valid-name-silpa-case-insensitive-and-ignoring-leading-trailing-whitespace-reliably-transitions-from-the-intro-screen-to-the-reveal-screen",
+      "title": "Fix the intro gate so entering the valid name (\"silpa\", case-insensitive and ignoring leading/trailing whitespace) reliably transitions from the intro screen to the reveal screen.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-intro-name-input-styling-so-the-characters-are-clearly-visible-while-typing-including-cursor-caret-visibility-on-the-white-input-background-without-reducing-readability-of-the-placeholder-text",
+      "title": "Fix the intro name input styling so the characters are clearly visible while typing (including cursor/caret visibility) on the white input background, without reducing readability of the placeholder text.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-reveal-second-screen-to-include-a-dedicated-bengali-love-shayari-section-displayed-under-the-existing-you-are-my-valentine-headline-with-typography-and-spacing-that-match-the-existing-dreamy-valentine-aesthetic",
+      "title": "Update the reveal (second) screen to include a dedicated Bengali love shayari section displayed under the existing \"You are my Valentine ❤️\" headline, with typography and spacing that match the existing dreamy Valentine aesthetic.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-teddy-animation-element-to-the-reveal-second-screen-and-position-it-harmoniously-with-the-existing-reveal-content-headline-subtext-and-decorations-without-obstructing-readability-or-interactions",
+      "title": "Add a teddy animation element to the reveal (second) screen and position it harmoniously with the existing reveal content (headline, subtext, and decorations) without obstructing readability or interactions.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-rose-petal-animation-on-the-reveal-second-screen-has-a-noticeable-page-open-moment-an-initial-burst-or-stronger-start-when-the-reveal-screen-becomes-visible-while-keeping-the-continuous-gentle-falling-behavior-afterward",
+      "title": "Ensure the rose/petal animation on the reveal (second) screen has a noticeable \"page open\" moment (an initial burst or stronger start) when the reveal screen becomes visible, while keeping the continuous gentle falling behavior afterward.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a Valentine-themed single-page web app with animated teddy intro, name validation (only \"silpa\"), Bangla cute-angry message on wrong name, and a romantic reveal page with gradient background, elegant text, smooth transitions, and continuous falling rose petals; mobile-friendly and no external frameworks.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Enhance the reveal (second) page to be more aesthetic: include rose animation when it opens, add Bengali love shayari text, and include a teddy animation on the reveal screen alongside the \"You are my Valentine\" message.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Valentine surprise single-page experience with teddy name gate and rose-petal reveal",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

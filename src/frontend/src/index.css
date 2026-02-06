@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        --background: 0.145 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.205 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.269 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.922 0 0;
+        --primary-foreground: 0.205 0 0;
+        --secondary: 0.269 0 0;
+        --secondary-foreground: 0.985 0 0;
+        --muted: 0.269 0 0;
+        --muted-foreground: 0.708 0 0;
+        --accent: 0.371 0 0;
+        --accent-foreground: 0.985 0 0;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.205 0 0;
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.556 0 0;
+        --chart-1: 0.488 0.243 264.376;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+        
+        /* Valentine color palette */
+        --valentine-pink: 0.85 0.18 345;
+        --valentine-rose: 0.78 0.22 350;
+        --valentine-blush: 0.92 0.10 340;
+        --valentine-deep: 0.65 0.25 355;
+    }
+
+    .dark {
+        --background: 0.145 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.205 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.269 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.922 0 0;
+        --primary-foreground: 0.205 0 0;
+        --secondary: 0.269 0 0;
+        --secondary-foreground: 0.985 0 0;
+        --muted: 0.269 0 0;
+        --muted-foreground: 0.708 0 0;
+        --accent: 0.371 0 0;
+        --accent-foreground: 0.985 0 0;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.205 0 0;
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.556 0 0;
+        --chart-1: 0.488 0.243 264.376;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+@layer utilities {
+    /* Font families */
+    .font-dancing {
+        font-family: 'Dancing Script', cursive;
+    }
+    
+    .font-poppins {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    /* Valentine colors */
+    .text-valentine-pink {
+        color: oklch(var(--valentine-pink));
+    }
+    
+    .text-valentine-rose {
+        color: oklch(var(--valentine-rose));
+    }
+    
+    .text-valentine-deep {
+        color: oklch(var(--valentine-deep));
+    }
+    
+    .bg-valentine-pink {
+        background-color: oklch(var(--valentine-pink));
+    }
+    
+    .bg-valentine-rose {
+        background-color: oklch(var(--valentine-rose));
+    }
+    
+    .bg-valentine-blush {
+        background-color: oklch(var(--valentine-blush));
+    }
+    
+    .bg-valentine-deep {
+        background-color: oklch(var(--valentine-deep));
+    }
+    
+    .from-valentine-pink {
+        --tw-gradient-from: oklch(var(--valentine-pink)) var(--tw-gradient-from-position);
+    }
+    
+    .via-valentine-blush {
+        --tw-gradient-via: oklch(var(--valentine-blush)) var(--tw-gradient-via-position);
+    }
+    
+    .to-valentine-rose {
+        --tw-gradient-to: oklch(var(--valentine-rose)) var(--tw-gradient-to-position);
+    }
+    
+    .border-valentine-rose {
+        border-color: oklch(var(--valentine-rose));
+    }
+    
+    /* Soft animations */
+    @keyframes fade-in-up-soft {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes teddy-bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    @keyframes teddy-shake {
+        0%, 100% {
+            transform: translateX(0) rotate(0deg);
+        }
+        25% {
+            transform: translateX(-5px) rotate(-3deg);
+        }
+        50% {
+            transform: translateX(5px) rotate(3deg);
+        }
+        75% {
+            transform: translateX(-5px) rotate(-3deg);
+        }
+    }
+    
+    @keyframes teddy-sway {
+        0%, 100% {
+            transform: translateY(0) rotate(-2deg);
+        }
+        50% {
+            transform: translateY(-8px) rotate(2deg);
+        }
+    }
+    
+    @keyframes heartbeat-gentle {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.03);
+        }
+    }
+    
+    @keyframes pulse-gentle {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.8;
+        }
+    }
+    
+    .animate-fade-in-up-soft {
+        animation: fade-in-up-soft 1s ease-out forwards;
+    }
+    
+    .animate-teddy-bounce {
+        animation: teddy-bounce 2s ease-in-out infinite;
+    }
+    
+    .animate-teddy-shake {
+        animation: teddy-shake 0.6s ease-in-out;
+    }
+    
+    .animate-teddy-sway {
+        animation: teddy-sway 3s ease-in-out infinite;
+    }
+    
+    .animate-heartbeat-gentle {
+        animation: heartbeat-gentle 2.5s ease-in-out infinite;
+    }
+    
+    .animate-pulse-gentle {
+        animation: pulse-gentle 3s ease-in-out infinite;
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-06T19:00:25.691Z",
+  "summary": "REQ-9 and REQ-10 appear implemented via new BengaliShayari and RevealTeddy components wired into the reveal screen. REQ-11’s “page open” burst behavior is implemented in RosePetals, but the burst interval timer is not clearly cleaned up on unmount, which may violate the no-runaway-intervals acceptance criterion.",
+  "missing_requirements": [
+    {
+      "id": "REQ-11",
+      "requirement": "No performance issues or runaway intervals/animation frames occur after repeated page refreshes (proper cleanup of timers/animation).",
+      "reason": "The new burstInterval created with setInterval is a local const and is cleared only after the 2-second timeout; the cleanup function does not clear burstInterval if the component unmounts before the timeout fires, which can leave an active interval running.",
+      "evidence": [
+        "frontend/src/components/RosePetals.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/BengaliShayari.tsx",
+    "frontend/src/components/RevealTeddy.tsx",
+    "frontend/src/components/RosePetals.tsx",
+    "frontend/src/components/ValentineReveal.tsx",
+    "frontend/src/index.css",
+    "project_state.json"
+  ]
+}

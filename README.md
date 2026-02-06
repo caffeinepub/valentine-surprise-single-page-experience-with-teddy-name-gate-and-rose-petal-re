@@ -1,2 +1,3 @@
-# valentine-surprise-single-page-experience-with-teddy-name-gate-and-rose-petal-re
-Exported from Caffeine project: Valentine surprise single-page experience with teddy name gate and rose-petal reveal
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

@@ -1,0 +1,75 @@
+{
+  "kind": "build_request",
+  "title": "Enhance the reveal (second) page with Bengali shayari and a teddy animation",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "text": "Update the reveal (second) screen to include a dedicated Bengali love shayari section displayed under the existing \"You are my Valentine ❤️\" headline, with typography and spacing that match the existing dreamy Valentine aesthetic.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Ei page ta jokhon khulbe ekta rose animation hobe r kichu prem er shayari bengi te lekha thakbe r page ta esthetic hobe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On the reveal screen, a clearly readable shayari block appears below the main headline.",
+        "The shayari block uses Bengali script text (Bangla) and is visually consistent with the current romantic/glassmorphic styling (soft shadows, no harsh contrast).",
+        "The shayari text is responsive (does not overflow on small screens) and remains legible over the background and animations."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Add a teddy animation element to the reveal (second) screen and position it harmoniously with the existing reveal content (headline, subtext, and decorations) without obstructing readability or interactions.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "r ha ekta tedy animation o thakbe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A teddy visual/animation is visible on the reveal screen.",
+        "The teddy animation is gentle (e.g., sway/bounce) and does not distract from or cover the main text.",
+        "The teddy element is responsive and looks good on mobile and desktop."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Ensure the rose/petal animation on the reveal (second) screen has a noticeable \"page open\" moment (an initial burst or stronger start) when the reveal screen becomes visible, while keeping the continuous gentle falling behavior afterward.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Ei page ta jokhon khulbe ekta rose animation hobe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When transitioning into the reveal screen, the rose/petal animation feels like it starts/celebrates the reveal (e.g., brief increased spawn density for the first seconds), then returns to the existing continuous gentle falling behavior.",
+        "The petal animation layer still does not block interactions (pointer-events disabled).",
+        "No performance issues or runaway intervals/animation frames occur after repeated page refreshes."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend immutable paths (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui) must not be edited.",
+    "Keep the app as a single-page two-state flow (intro gate -> reveal) with the existing smooth transition behavior.",
+    "Do not add new backend functionality; backend/main.mo should remain effectively unused unless explicitly required by a new feature."
+  ],
+  "nonGoals": [
+    "Adding additional pages/routes beyond the existing intro and reveal screens.",
+    "Adding authentication changes or any Internet Identity flow changes.",
+    "Adding external services, databases, or real-time features."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

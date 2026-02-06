@@ -1,0 +1,75 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Reveal screen enhancements: Bengali shayari, teddy animation, and rose burst on entry",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "summary": "Add a dedicated Bengali love shayari section under the existing reveal headline with matching dreamy/glassmorphic styling and responsive typography.",
+      "acceptanceCriteria": [
+        "On the reveal screen, a clearly readable shayari block appears below the main headline.",
+        "The shayari block uses Bengali script text (Bangla) and is visually consistent with the current romantic/glassmorphic styling (soft shadows, no harsh contrast).",
+        "The shayari text is responsive (does not overflow on small screens) and remains legible over the background and animations."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BengaliShayari.tsx",
+          "operation": "create",
+          "description": "Create a small presentational component that renders the Bengali (Bangla) shayari text with soft/glassmorphic-friendly typography (responsive font sizes, relaxed line-height, safe wrapping). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ValentineReveal.tsx",
+          "operation": "modify",
+          "description": "Wire the new Bengali shayari block directly under the existing \"You are my Valentine ❤️\" headline within the main glassmorphic card, ensuring spacing and text contrast remain consistent with the current dreamy Valentine aesthetic. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add a gentle, responsive teddy animation element to the reveal screen without obstructing headline/shayari readability or interactions.",
+      "acceptanceCriteria": [
+        "A teddy visual/animation is visible on the reveal screen.",
+        "The teddy animation is gentle (e.g., sway/bounce) and does not distract from or cover the main text.",
+        "The teddy element is responsive and looks good on mobile and desktop."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/RevealTeddy.tsx",
+          "operation": "create",
+          "description": "Create a reveal-only teddy visual component using the existing asset at frontend/public/assets/generated/teddy-bear-transparent.dim_128x128.png with a gentle animation and responsive sizing/positioning; ensure it does not capture pointer events. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add/extend a gentle teddy motion animation (e.g., subtle sway) utility class to be used by the reveal teddy so it feels calm and non-distracting, matching the existing romantic animation style."
+        },
+        {
+          "path": "frontend/src/components/ValentineReveal.tsx",
+          "operation": "modify",
+          "description": "Place the reveal teddy element harmoniously around the existing reveal content (e.g., anchored near a corner or alongside the card on larger screens) so it never overlaps the main text block; keep layering and pointer-events safe. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Make the rose/petal animation on reveal have an initial celebratory burst on screen entry, then settle into the existing gentle continuous falling behavior with safe cleanup.",
+      "acceptanceCriteria": [
+        "When transitioning into the reveal screen, the rose/petal animation feels like it starts/celebrates the reveal (e.g., brief increased spawn density for the first seconds), then returns to the existing continuous gentle falling behavior.",
+        "The petal animation layer still does not block interactions (pointer-events disabled).",
+        "No performance issues or runaway intervals/animation frames occur after repeated page refreshes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/RosePetals.tsx",
+          "operation": "modify",
+          "description": "Adjust the animation logic to include a clear on-mount burst (e.g., immediate initial spawn plus a short high-density spawn window), then revert to the current gentle spawn rate; ensure all timers/animation frames are correctly cleaned up to prevent leaks on repeated transitions/refreshes."
+        },
+        {
+          "path": "frontend/src/components/ValentineReveal.tsx",
+          "operation": "modify",
+          "description": "Confirm the rose/petal animation remains correctly layered for the reveal (celebratory burst visible behind the content) while preserving pointer-events disabled so interactions are never blocked."
+        }
+      ]
+    }
+  ]
+}

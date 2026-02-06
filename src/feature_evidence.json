@@ -1,0 +1,63 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-reveal-second-screen-to-include-a-dedicated-bengali-love-shayari-section-displayed-under-the-existing-you-are-my-valentine-headline-with-typography-and-spacing-that-match-the-existing-dreamy-valentine-aesthetic",
+      "featureTitle": "Update the reveal (second) screen to include a dedicated Bengali love shayari section displayed under the existing \"You are my Valentine ❤️\" headline, with typography and spacing that match the existing dreamy Valentine aesthetic.",
+      "files": [
+        "frontend/src/components/BengaliShayari.tsx",
+        "frontend/src/components/ValentineReveal.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-teddy-animation-element-to-the-reveal-second-screen-and-position-it-harmoniously-with-the-existing-reveal-content-headline-subtext-and-decorations-without-obstructing-readability-or-interactions",
+      "featureTitle": "Add a teddy animation element to the reveal (second) screen and position it harmoniously with the existing reveal content (headline, subtext, and decorations) without obstructing readability or interactions.",
+      "files": [
+        "frontend/src/components/RevealTeddy.tsx",
+        "frontend/src/components/ValentineReveal.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-rose-petal-animation-on-the-reveal-second-screen-has-a-noticeable-page-open-moment-an-initial-burst-or-stronger-start-when-the-reveal-screen-becomes-visible-while-keeping-the-continuous-gentle-falling-behavior-afterward",
+      "featureTitle": "Ensure the rose/petal animation on the reveal (second) screen has a noticeable \"page open\" moment (an initial burst or stronger start) when the reveal screen becomes visible, while keeping the continuous gentle falling behavior afterward.",
+      "files": [
+        "frontend/src/components/RosePetals.tsx",
+        "frontend/src/components/ValentineReveal.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
